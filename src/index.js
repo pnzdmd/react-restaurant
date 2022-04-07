@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/style.css'
-import Landing from './components/Landing';
-//import App from './components/App';
+import Router from './components/Router';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Landing/>
+    <Router/>
   </React.StrictMode>,
   document.getElementById('root')
 );
+

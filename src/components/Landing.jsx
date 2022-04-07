@@ -21,7 +21,11 @@ class Landing extends Component {
     this.setState({ title: title, url: url, display: false });
   };
   // метод для перехода на страницу выбранного ресторана
-  getToRestaurant = () => {};
+  getToRestaurant = () => {
+    const { url } = this.state;
+    console.log(url);
+    this.props.history.push(`/restaurant/${url}`);
+  };
 
   render() {
     return (
