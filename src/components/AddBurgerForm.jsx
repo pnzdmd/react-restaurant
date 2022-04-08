@@ -14,8 +14,8 @@ class AddBurgerForm extends React.Component {
     // создаю константу для приема всех значений полей инпутов
     const burger = {
       name: this.nameRef.current.value,
-      // перевел значение в числовой формат
-      price: parseFloat(this.priceRef.current.value),
+      // перевел значение в числовой формат, если значение не указано, то будет 0
+      price: parseFloat(this.priceRef.current.value || 0),
       status: this.statusRef.current.value,
       desc: this.descRef.current.value,
       image: this.imageRef.current.value,

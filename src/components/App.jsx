@@ -12,7 +12,6 @@ class App extends React.Component {
   };
 
   addBurger = (burger) => {
-    console.log('addBurger', burger);
     // 1. делаю копию объекта state.burgers
     const burgers = { ...this.state.burgers };
     // 2. Добавить новый бургер в переменную burgers
@@ -24,6 +23,14 @@ class App extends React.Component {
   // метод добавлений бургеров в меню
   loadSampleBurgers = () => {
     this.setState({ burgers: sampleBurgers });
+  };
+
+  // метод добавления бургеров по кнопке в Order
+  addToOrder = (key) => {
+    const order = { ...this.state.order };
+    // Добавить ключ к заказу со значением 1, либо обновить текущее значение
+    order[key] = order[key] + 1 || 1;
+    this.setState({ order });
   };
 
   render() {
@@ -38,6 +45,7 @@ class App extends React.Component {
                   key={key}
                   index={key}
                   details={this.state.burgers[key]}
+                  addToOrder={this.addToOrder}
                 />
               );
             })}
