@@ -23,7 +23,6 @@ class Landing extends Component {
   // метод для перехода на страницу выбранного ресторана
   getToRestaurant = () => {
     const { url } = this.state;
-    console.log(url);
     this.props.history.push(`/restaurant/${url}`);
   };
 
